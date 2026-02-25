@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface LibroDAO extends CrudRepository<Libro, String> {
 
-    List<Libro> findByNombre(String nombre);
+    List<Libro> findByTitulo(String titulo);
     List<Libro> findByAutor(String autor);
     List<Libro> findByEditor(String editor);
-    List<Libro> findByCreador(String creador);
+
 }

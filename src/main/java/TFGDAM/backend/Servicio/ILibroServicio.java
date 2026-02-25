@@ -6,11 +6,12 @@ import java.util.List;
 
 public interface ILibroServicio {
 
-    public List<Libro> findAll();
-    public List<Libro> findByNombre(String nombre);
+    public Libro findByISBN(String isbn);
+    public List<Libro> findByTitulo(String titulo);
     public List<Libro> findByAutor(String autor);
     public List<Libro> findByEditor(String editor);
-    public List<Libro> findByCreador(String creador);
-
+    public boolean insert(Libro libro);
+    public boolean update(Libro libro);
+    public boolean delete(Libro libro);
 
 }
