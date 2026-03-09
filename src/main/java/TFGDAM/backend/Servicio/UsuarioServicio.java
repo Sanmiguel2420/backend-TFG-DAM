@@ -1,5 +1,6 @@
 package TFGDAM.backend.Servicio;
 
+import TFGDAM.backend.Modelo.Prestamo;
 import TFGDAM.backend.Modelo.Usuario;
 import TFGDAM.backend.Repositorio.UsuarioDAO;
 import org.springframework.beans.factory.annotation.Autowired;

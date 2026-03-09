@@ -5,7 +5,7 @@ public enum Categoria {
     TERROR,
     FANTASIA,
     MISTERIO,
-    POLICIACO,
+    POLICIACA,
     JUVENIL;
 
     @Override

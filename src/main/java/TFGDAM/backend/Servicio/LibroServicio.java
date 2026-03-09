@@ -15,7 +15,11 @@ public class LibroServicio implements ILibroServicio {
 
     @Override
     public Libro findByISBN(String isbn) {
-        return libroDAO.findById(isbn);
+        Libro libro = libroDAO.findById(isbn).get();
+        if (libro == null) {
+            throw new RuntimeException("Libro no encontrado");
+        }
+        return libro;
     }
 
     @Override
@@ -36,8 +40,9 @@ public class LibroServicio implements ILibroServicio {
     @Override
     public boolean insert(Libro libro) {
         boolean respuesta = false;
-        List<Libro> libros = (ArrayList<Libro>) libroDAO.findAll();
+        List<Libro> libros = (List<Libro>) libroDAO.findAll();
         if(!libros.contains(libro)) {
+            libroDAO.save(libro);
             respuesta = true;
         }
         return respuesta;
@@ -51,7 +56,7 @@ public class LibroServicio implements ILibroServicio {
             libroDAO.save(libro);
             respuesta = true;
         }
-        return repuesta;
+        return respuesta;
     }
 
     @Override
