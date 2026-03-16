@@ -5,7 +5,6 @@ import TFGDAM.backend.Repositorio.LibroDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,8 +32,8 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
-    public List<Libro> findByEditor(String editor) {
-        return libroDAO.findByEditor(editor);
+    public List<Libro> findByEditor(String editorial) {
+        return libroDAO.findByEditorial(editorial);
     }
 
     @Override
@@ -68,6 +67,11 @@ public class LibroServicio implements ILibroServicio {
             respuesta = true;
         }
         return respuesta;
+    }
+
+    @Override
+    public List<Libro> findAll() {
+        return libroDAO.findAll();
     }
 
 }

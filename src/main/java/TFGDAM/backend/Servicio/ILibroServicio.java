@@ -13,5 +13,5 @@ public interface ILibroServicio {
     public boolean insert(Libro libro);
     public boolean update(Libro libro);
     public boolean delete(Libro libro);
-
+    List<Libro> findAll();
 }

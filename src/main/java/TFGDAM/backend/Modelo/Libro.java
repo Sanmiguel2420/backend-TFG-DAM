@@ -1,6 +1,8 @@
 package TFGDAM.backend.Modelo;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.io.Serializable;
@@ -13,6 +15,8 @@ import java.util.List;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 
+@Entity
+@Table(name = "LIBROS")
 public class Libro implements Serializable {
 
     @Id
