@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -25,5 +25,5 @@ public class Prestamo implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     Usuario usuario;
     @Column(name = "FechaPrestamo")
-    private Date fechaPrestamo;
+    private LocalDate fechaPrestamo;
 }

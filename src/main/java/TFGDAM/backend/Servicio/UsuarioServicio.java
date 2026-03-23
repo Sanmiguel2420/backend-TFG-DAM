@@ -46,4 +46,18 @@ public class UsuarioServicio implements IUsuarioServicio {
        }
         return respuesta;
     }
+
+    @Override
+    public List<Usuario> findAll() {
+        return  (List<Usuario>) usuarioDAO.findAll();
+    }
+
+    @Override
+    public Usuario findById(String dni) {
+        Usuario u = usuarioDAO.findById(dni).get();
+        if(u == null) {
+            throw new RuntimeException("Usuario no encontrado");
+        }
+        return u;
+    }
 }
