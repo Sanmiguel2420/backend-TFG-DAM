@@ -21,7 +21,6 @@ public class Libro implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    @NonNull
     private String ISBN;
     private String titulo;
     private String autor;

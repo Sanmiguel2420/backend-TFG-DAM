@@ -32,7 +32,7 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
-    public List<Libro> findByEditor(String editorial) {
+    public List<Libro> findByEditorial(String editorial) {
         return libroDAO.findByEditorial(editorial);
     }
 
@@ -59,11 +59,11 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
-    public boolean delete(Libro libro) {
+    public boolean delete(String isbn) {
         boolean respuesta = false;
-        Optional<Libro> libroGuardado = libroDAO.findById(libro.getISBN());
+        Optional<Libro> libroGuardado = libroDAO.findById(isbn);
         if(libroGuardado.isPresent()) {
-            libroDAO.delete(libro);
+            libroDAO.delete(libroGuardado.get());
             respuesta = true;
         }
         return respuesta;

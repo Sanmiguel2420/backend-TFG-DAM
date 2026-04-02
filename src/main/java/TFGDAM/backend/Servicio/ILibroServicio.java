@@ -9,9 +9,9 @@ public interface ILibroServicio {
     public Libro findByISBN(String isbn);
     public List<Libro> findByTitulo(String titulo);
     public List<Libro> findByAutor(String autor);
-    public List<Libro> findByEditor(String editor);
+    public List<Libro> findByEditorial(String editor);
     public boolean insert(Libro libro);
     public boolean update(Libro libro);
-    public boolean delete(Libro libro);
+    public boolean delete(String isbn);
     List<Libro> findAll();
 }
