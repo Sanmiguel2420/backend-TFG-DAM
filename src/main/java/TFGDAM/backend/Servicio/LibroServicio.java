@@ -37,14 +37,12 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
-    public boolean insert(Libro libro) {
-        boolean respuesta = false;
-        List<Libro> libros = (List<Libro>) libroDAO.findAll();
-        if(!libros.contains(libro)) {
+    public void insert(Libro libro) {
+        if (!libroDAO.existsById(libro.getISBN())) {
             libroDAO.save(libro);
-            respuesta = true;
+        } else {
+            throw new RuntimeException("El libro ya existe");
         }
-        return respuesta;
     }
 
     @Override
@@ -59,14 +57,9 @@ public class LibroServicio implements ILibroServicio {
     }
 
     @Override
-    public boolean delete(String isbn) {
-        boolean respuesta = false;
+    public void delete(String isbn) {
         Optional<Libro> libroGuardado = libroDAO.findById(isbn);
-        if(libroGuardado.isPresent()) {
-            libroDAO.delete(libroGuardado.get());
-            respuesta = true;
-        }
-        return respuesta;
+        libroGuardado.ifPresent(libro -> libroDAO.delete(libro));
     }
 
     @Override

@@ -54,11 +54,15 @@ public class LibroControlador {
         return ResponseEntity.ok(libroServicio.findByEditorial(editorial));
     }
 
-  /*  @PostMapping("/insertar")
+  @PostMapping("/insertar")
     public ResponseEntity<String> insertarLibro(@RequestBody Libro libro){
-        libroServicio.insert(libro);
-        return ResponseEntity.ok("Libro insertado correctamente");
-    }*/
+        try {
+            libroServicio.insert(libro);
+            return ResponseEntity.ok("Libro insertado correctamente");
+        }catch  (Exception e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
     @DeleteMapping("/eliminar")
     public ResponseEntity<String> eliminarLibro(@RequestParam String ISBN){

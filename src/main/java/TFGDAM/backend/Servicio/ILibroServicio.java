@@ -10,8 +10,8 @@ public interface ILibroServicio {
     public List<Libro> findByTitulo(String titulo);
     public List<Libro> findByAutor(String autor);
     public List<Libro> findByEditorial(String editor);
-    public boolean insert(Libro libro);
+    public void insert(Libro libro);
     public boolean update(Libro libro);
-    public boolean delete(String isbn);
+    public void delete(String isbn);
     List<Libro> findAll();
 }

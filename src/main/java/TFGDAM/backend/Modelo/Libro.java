@@ -1,5 +1,6 @@
 package TFGDAM.backend.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -21,6 +22,7 @@ public class Libro implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
+    @JsonProperty("isbn")
     private String ISBN;
     private String titulo;
     private String autor;
