@@ -13,6 +13,7 @@ public interface IPrestamoServicio {
     List<Prestamo> findByUsuario(Usuario usuario);
     List<Prestamo> findByLibro(Libro libro);
     Prestamo findById(String id);
-    boolean save(Prestamo prestamo);
+    void save(Prestamo prestamo);
     boolean update(Prestamo prestamo);
+    void delete(String id);
 }

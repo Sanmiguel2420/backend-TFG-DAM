@@ -17,4 +17,5 @@ public interface PrestamoDAO extends CrudRepository<Prestamo, String> {
 
     @Query("SELECT p FROM Prestamo p WHERE p.libro = ?1")
     List<Prestamo> findByLibro(Libro libro);
+
 }
