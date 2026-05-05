@@ -27,16 +27,16 @@ public class PrestamoControlador {
         return ResponseEntity.ok(prestamoServicio.findAll());
     }
 
-   /* @GetMapping("/consultar/usuario")
+   @PostMapping("/consultar/usuario")
     public ResponseEntity<List<Prestamo>> consultarUsuario(@RequestBody Usuario usuario){
         return ResponseEntity.ok(prestamoServicio.findByUsuario(usuario));
     }
 
-    @GetMapping("/consultar/libro")
+    @PostMapping("/consultar/libro")
     public ResponseEntity<List<Prestamo>> consultarLibro(@RequestBody Libro libro){
         return ResponseEntity.ok(prestamoServicio.findByLibro(libro));
     }
-*/
+
     @GetMapping("/consultar/id")
     public ResponseEntity<Prestamo> consultarId(@RequestParam String id){
         return ResponseEntity.ok(prestamoServicio.findById(id));
@@ -52,16 +52,16 @@ public class PrestamoControlador {
         }
     }
 
-  /*  @PutMapping("/actualizar")
+    /*@PutMapping("/actualizar")
     public ResponseEntity<String> actualizarPrestamo(@RequestBody Prestamo prestamo){
         try {
-            prestamoServicio.save(prestamo);
+            prestamoServicio.update(prestamo);
             return ResponseEntity.ok("Prestamo actualizado exitosamente");
         }  catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-    }
-*/
+    }*/
+
     @DeleteMapping("/eliminar")
     public ResponseEntity<String> eliminarPrestamo(@RequestParam String id){
         try {
