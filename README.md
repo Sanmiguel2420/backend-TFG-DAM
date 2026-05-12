@@ -39,25 +39,25 @@ Versiónes necesarias
 	- En este momento, la API tiene dos Endpoints llamados "/Tfgdam/Usuario/cargar" y "/TfgDam/Libro/cargar", se deben de ejecutar estos dos EndPoints primero, indistintamente del orden en el que se ejecuten, para agregar información para realizar pruebas(Tambien se puede agregar distintos mediante los EndPoints "/Tfgdam/Usuario/insertar" y "/TfgDam/Libro/insertar")
 	- Agregar un prestamo, mediante el EndPoint "/Tfgdam/Prestamo/guardar" para agregar una relacion entre un usuario y un libro (En el caso de haber usado los dos Endpoints de cargar). Puedes insertar este prestamo simplemente copiandolo
 
-{
-  "numOperacion": "01",
-  "libro": {
-    "isbn": "12345",
-    "titulo": "Palabras Radiantes",
-    "autor": "Brandon Sanderson",
-    "editorial": "Nova",
-    "categorias": [
-      "FANTASIA"
-    ],
-    "fechaSalida": "2026-05-11",
-    "tipoLibro": "TAPA_DURA"
-  },
-  "usuario": {
-    "dni": "000001M",
-    "nombre": "Juan",
-    "apellidos": "Garcia Martin",
-    "fechaNacimiento": "2008-05-12",
-    "fechaAlta": "2026-01-12"
-  },
-  "fechaPrestamo": "2026-05-12"
-}
+	-{
+	  "numOperacion": "01",
+	  "libro": {
+	    "isbn": "12345",
+	    "titulo": "Palabras Radiantes",
+	    "autor": "Brandon Sanderson",
+	    "editorial": "Nova",
+	    "categorias": [
+	      "FANTASIA"
+	    ],
+	    "fechaSalida": "2026-05-11",
+	    "tipoLibro": "TAPA_DURA"
+	  },
+	  "usuario": {
+	    "dni": "000001M",
+	    "nombre": "Juan",
+	    "apellidos": "Garcia Martin",
+	    "fechaNacimiento": "2008-05-12",
+	    "fechaAlta": "2026-01-12"
+	  },
+	  "fechaPrestamo": "2026-05-12"
+	}
